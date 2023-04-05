@@ -1,58 +1,8 @@
 
-https://user-images.githubusercontent.com/85185940/227948968-03e5097d-9850-437f-8109-8d376bf81e9f.mp4
+This is just a mirror of my Hyprland-dots I used for youtube. Link below
 
 
-<br>
-<h3 align = "center"> Arch / Gentoo Hyprland Dotfiles</h3>
-<br>
-
-<img src="https://github.com/JaKooLit/Ja_HyprLanD-dots/blob/main/preview/Arch.png" alt="">
-
-<img src="https://github.com/JaKooLit/Ja_HyprLanD-dots/blob/main/preview/Gentoo.png" alt="">
-
-## Components:
-
-- Main Component:[`Hyprland`](https://github.com/hyprwm/Hyprland)
-- Terminal: [`Foot`](https://github.com/r-c-f/foot)
-- Shell: [`Zshell`](https://www.zsh.org/)
-- Status bar: [`Waybar`](https://github.com/Alexays/Waybar)
-- Menu : [`Wofi`](https://hg.sr.ht/~scoopta/wofi)
-- FIle Manager: [`Thunar`](https://docs.xfce.org/xfce/thunar/start)
-
-## Miscellaneous:
-
-- Themes: `Dracula`
-- Cursor theme: `Bibata Modern Ice`
-
-## Needed packages:
-
-(all of the above components) plus
-
-`swaybg` - for wallpaper
-
-`swayidle` - not necessary but you can install
-
-`swaylock-effects` - or swaylock
-
-`wlroots` `wlogout` `cava` `polkit-gnome`
-
-`mako` - for notifications
-
-`grim` `slurp` `wl-clipboard` - for screenshot
-
-`brightnessctl`  - for monitor and keyboard brightness - not needed for desktop
-
-`mpv` - for wofi beats to work
-
-`viewnior` or `swayimg`  
-
-`pamixer` - for volume control notification. 
-
-`xorg-xwayland` - needed to run some non-wayland app especially games
-
-`fonts` - required awesome fonts. AUR and official repo have... else most of the waybar modules wont work. Most of configs here I used Fantasque Sans Mono. I used Cascadia Code Semibold Italic on foot.
-
-
+https://github.com/JaKooLit/Ja_HyprLanD-dots
 
 ## ✨ Arch Linux quick Installation:
 
