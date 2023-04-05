@@ -2,8 +2,8 @@
 
 ## Set GTK Themes, Icons, Cursor and Fonts
 
-THEME='Dracula'
-ICONS='Dracula'
+THEME='Nordic-standard-buttons-v40'
+ICONS='Shiny-Dark-Icons'
 FONT='Fantasque Sans Mono 17'
 CURSOR='Bibata-Modern-Ice'
 
