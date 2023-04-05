@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Arch, nwg-look is available 
 ## Set GTK Themes, Icons, Cursor and Fonts
 
 THEME='Nordic-standard-buttons-v40'
