@@ -1,5 +1,5 @@
 
-This is just a mirror of my Hyprland-dots I used for youtube. Link below
+This is just a mirror but with few minor tweaks for my system of my Hyprland-dots I used for youtube. Link below
 
 
 https://github.com/JaKooLit/Ja_HyprLanD-dots
