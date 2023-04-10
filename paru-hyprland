@@ -187,7 +187,7 @@ read -n1 -rep "${CAT} Would you like to copy config and wallpaper files? (y,n)" 
 if [[ $CFG == "Y" || $CFG == "y" ]]; then
     printf " Copying config files...\n"
 else
-   print_error "No Config files and wallpaper files copied"
+   print_error " No Config files and wallpaper files copied"
     mkdir -p ~/.config
     cp -r config/hypr ~/.config/ || { echo "Error: Failed to copy hypr config files."; exit 1; }
     cp -r config/foot ~/.config/ || { echo "Error: Failed to copy foot config files."; exit 1; }
