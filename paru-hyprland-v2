@@ -56,7 +56,7 @@ if [ -f "$ISPARU" ]; then
     printf "%s - paru was located, moving on.\n" "$GREEN"
 else 
     printf "%s - paru was NOT located\n" "$YELLOW"
-    read -n1 -rep "${CAT}  Would you like to install paru (y,n)" INSTPARU
+    read -n1 -rep "${CAT} Would you like to install paru (y,n)" INSTPARU
     if [[ $INSTPARU == "Y" || $INSTPARU == "y" ]]; then
         git clone https://aur.archlinux.org/paru-bin.git
         cd paru-bin
@@ -88,11 +88,11 @@ print_success() {
 }
 
 # Install necessary packages
-read -n1 -rep "${CAT}  Would you like to install the packages? (y/n)" inst
+read -n1 -rep "${CAT} Would you like to install the packages? (y/n)" inst
 echo
 
 if [[ $inst =~ ^[Yy]$ ]]; then
-    read -n1 -rep "${CAT}  Would you like to install the Nvidia Hyprland? (y/n)" inst2
+    read -n1 -rep "${CAT} Would you like to install the Nvidia Hyprland? (y/n)" inst2
     echo
 
     if [[ $inst2 =~ ^[Yy]$ ]]; then
@@ -110,7 +110,7 @@ if [[ $inst =~ ^[Yy]$ ]]; then
         fi
     fi
 
-    echo -e "${YELLOW}Installing additional packages. Please wait..."
+    echo -e "${YELLOW} Installing additional packages. Please wait..."
     sleep 1
 
     # Install packages
@@ -125,7 +125,7 @@ if [[ $inst =~ ^[Yy]$ ]]; then
     fi
 
     # Start the bluetooth service
-    echo -e "\n${YELLOW}Starting the Bluetooth service..."
+    echo -e "${YELLOW} Starting the Bluetooth service..."
     if ! sudo systemctl enable --now bluetooth.service; then
         print_error "Failed to start the Bluetooth service."
         exit 1
@@ -174,7 +174,7 @@ print_success "All none xdg-desktop-portal-hyprland present"
 ### Copy Config Files ###
 set -e # Exit immediately if a command exits with a non-zero status.
 
-read -n1 -rep "${CAT}  Would you like to copy config and wallpaper files? (y,n)" CFG
+read -n1 -rep "${CAT} Would you like to copy config and wallpaper files? (y,n)" CFG
 if [[ $CFG == "Y" || $CFG == "y" ]]; then
     echo -e "Copying config files...\n"
     mkdir -p ~/.config
@@ -220,6 +220,19 @@ if [[ $ROG =~ ^[Yy]$ ]]; then
     sleep 2
 else
     echo -e "\nAsus ROG software support not installed."
+fi
+
+### Disable wifi powersave mode ###
+read -n1 -rep "Would you like to disable WiFi powersave? (y,n)" WIFI
+if [[ $WIFI == "Y" || $WIFI == "y" ]]; then
+    LOC="/etc/NetworkManager/conf.d/wifi-powersave.conf"
+    echo -e "$CAT - The following file has been created $LOC."
+    echo -e "[connection]\wifi.powersave = 2" | sudo tee -a $LOC
+    echo -e "\n"
+    echo -e "$CAT Restarting NetworkManager service..."
+    sleep 1
+    sudo systemctl restart NetworkManager
+    sleep 3
 fi
 
 ### Script is done ###
