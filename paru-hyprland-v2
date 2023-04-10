@@ -168,7 +168,7 @@ if pacman -Qs xdg-desktop-portal-lxqt > /dev/null ; then
     sudo pacman -R --noconfirm xdg-desktop-portal-lxqt
 fi
 
-echo -e "\nNone XDG-Portal-Hyprland uninstalled"
+print_success "All none xdg-desktop-portal-hyprland present"
 
 
 ### Copy Config Files ###
