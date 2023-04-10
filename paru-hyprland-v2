@@ -40,8 +40,8 @@
 # Define color variables
 GREEN="[\e[1;32mOK\e[0m]"
 RED="[\e[1;31mERROR\e[0m]"
-YELLOW="[\e[1;35mWARNING\e[0m]"
-CAT="[\e[1;37mATTENTION\e[0m]"
+YELLOW="[\e[1;32mWARNING\e[0m]"
+CAT="[\e[1;32mATTENTION\e[0m]"
 NC='\033[0m' # No Color
 
 # Set the script to exit on error
