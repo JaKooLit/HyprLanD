@@ -254,7 +254,7 @@ if [[ $HYP == "Y" || $HYP == "y" ]]; then
     if command -v Hyprland >/dev/null; then
         exec Hyprland
     else
-         print_error "Hyprland not found. Please make sure it is installed and try again.\n"
+         print_error " Hyprland not found. Please make sure it is installed and try again.\n"
         exit 1
     fi
 else
