@@ -56,7 +56,7 @@ if [ -f "$ISPARU" ]; then
     printf "%s - paru was located, moving on.\n" "$GREEN"
 else 
     printf "%s - paru was NOT located\n" "$YELLOW"
-    read -n1 -rep "${CAT}Would you like to install paru (y,n)" INSTPARU
+    read -n1 -rep "${CAT}  Would you like to install paru (y,n)" INSTPARU
     if [[ $INSTPARU == "Y" || $INSTPARU == "y" ]]; then
         git clone https://aur.archlinux.org/paru-bin.git
         cd paru-bin
@@ -88,17 +88,17 @@ print_success() {
 }
 
 # Install necessary packages
-read -n1 -rep "${CAT}Would you like to install the packages? (y/n)" inst
+read -n1 -rep "${CAT}  Would you like to install the packages? (y/n)" inst
 echo
 
 if [[ $inst =~ ^[Yy]$ ]]; then
-    read -n1 -rep "${CAT}Would you like to install the Nvidia Hyprland? (y/n)" inst2
+    read -n1 -rep "${CAT}  Would you like to install the Nvidia Hyprland? (y/n)" inst2
     echo
 
     if [[ $inst2 =~ ^[Yy]$ ]]; then
         # Install Nvidia Hyprland
         if ! paru -S --noconfirm hyprland-nvidia-git; then
-            print_error "Failed to install Nvidia Hyprland."
+            print_error "Failed to install Nvidia Hyprland - remove any conflicting package"
             exit 1
         fi
     else
@@ -174,7 +174,7 @@ echo -e "\nNone XDG-Portal-Hyprland uninstalled"
 ### Copy Config Files ###
 set -e # Exit immediately if a command exits with a non-zero status.
 
-read -n1 -rep "${CAT}Would you like to copy config and wallpaper files? (y,n)" CFG
+read -n1 -rep "${CAT}  Would you like to copy config and wallpaper files? (y,n)" CFG
 if [[ $CFG == "Y" || $CFG == "y" ]]; then
     echo -e "Copying config files...\n"
     mkdir -p ~/.config
@@ -208,7 +208,7 @@ fi
 
 
 ### Install software for Asus ROG laptops ###
-read -n1 -rep "${CAT}(OPTIONAL - ONLY for ROG Laptops) Would you like to install Asus ROG software support? (y/n)" ROG
+read -n1 -rep "(OPTIONAL - ONLY for ROG Laptops) Would you like to install Asus ROG software support? (y/n)" ROG
 if [[ $ROG =~ ^[Yy]$ ]]; then
     echo -e "\nInstalling ASUS ROG packages...\n"
     paru -S --noconfirm asusctl 
@@ -225,9 +225,9 @@ fi
 ### Script is done ###
 echo -e "Installation Completed.\n"
 echo -e "You can start Hyprland by typing Hyprland (note the capital H!).\n"
-echo -e "NOTE! No Login Manager installed. You can start Hyprland by typing Hyprland (note the capital H!).\n"
-echo -e "NOTE! It is highly recommended to reboot your computer first.\n"
-read -n1 -rep "${CAT}Would you like to start Hyprland now? (y,n)" HYP
+echo -e "${CAT} No Login Manager installed. You can start Hyprland by typing Hyprland (note the capital H!).\n"
+echo -e "${CAT} It is highly recommended to reboot your computer first.\n"
+read -n1 -rep "Would you like to start Hyprland now? (y,n)" HYP
 if [[ $HYP == "Y" || $HYP == "y" ]]; then
     if command -v Hyprland >/dev/null; then
         exec Hyprland
