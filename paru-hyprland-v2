@@ -87,7 +87,7 @@ print_success() {
 }
 
 # Install necessary packages
-read -n1 -rep "${YELLOW}Necessary packages will be installed. Press any key to continue.${NC}"
+read -n1 "${YELLOW}Necessary packages will be installed.${NC}"
 echo
 
 sleep 2
@@ -115,7 +115,7 @@ if [[ $inst =~ ^[Yy]$ ]]; then
     fi
 
     echo -e "${YELLOW}Installing additional packages. Please wait...${NC}"
-    sleep 1
+    sleep 2
 
     # Install packages
     font_pkgs="otf-font-awesome ttf-jetbrains-mono-nerd otf-font-awesome-4 ttf-fantasque-sans-mono"
@@ -144,10 +144,10 @@ else
 fi
    
  # Clean out other portals
-read -n1 -rep "none xdg-portal implementations conflicts with xdg-desktop-portal-hyprland"
+read -n1 "Checking if any xdg-desktop-portal conflicts with xdg-desktop-portal-hyprland"
 sleep 2
 
-echo -e "\nChecking if any xdg-desktop-portals exist..."
+echo -e "\nChecking if any other xdg-desktop-portals exist..."
 
 # Check if packages are installed and uninstall if present
 if pacman -Qs xdg-desktop-portal-gnome > /dev/null ; then
