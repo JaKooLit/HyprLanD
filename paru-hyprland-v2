@@ -103,7 +103,7 @@ if [[ $inst =~ ^[Yy]$ ]]; then
         fi
     else
         # Install non-Nvidia Hyprland
-        echo -e "${YELLOW}No Nvidia-Hyprland will be installed."
+        echo -e "${YELLOW} None Nvidia-Hyprland will be installed."
         if ! paru -S --noconfirm hyprland; then
             print_error "Failed to install non-Nvidia Hyprland."
             exit 1
