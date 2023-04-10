@@ -38,9 +38,9 @@
 # mousepad: simple text editor
 
 # Define color variables
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[0;33m'
+GREEN="[\e[1;32mOK\e[0m]"
+RED="[\e[1;31mERROR\e[0m]"
+YELLOW="[\e[1;35mWARNING\e[0m]"
 NC='\033[0m' # No Color
 
 # Set the script to exit on error
@@ -97,20 +97,20 @@ if [[ $inst =~ ^[Yy]$ ]]; then
     if [[ $inst2 =~ ^[Yy]$ ]]; then
         # Install Nvidia Hyprland
         if ! paru -S --noconfirm hyprland-nvidia-git; then
-            print_error "Failed to install Nvidia Hyprland."
+            print_error "${RED}Failed to install Nvidia Hyprland."
             exit 1
         fi
     else
         # Install non-Nvidia Hyprland
         echo -e "${YELLOW}No Nvidia-Hyprland will be installed.${NC}"
         if ! paru -S --noconfirm hyprland; then
-            print_error "Failed to install non-Nvidia Hyprland."
+            print_error "${RED}Failed to install non-Nvidia Hyprland."
             exit 1
         fi
     fi
 
     echo -e "${YELLOW}Installing additional packages. Please wait...${NC}"
-    sleep 2
+    sleep 1
 
     # Install packages
     font_pkgs="otf-font-awesome ttf-jetbrains-mono-nerd otf-font-awesome-4 ttf-fantasque-sans-mono"
@@ -119,14 +119,14 @@ if [[ $inst =~ ^[Yy]$ ]]; then
 
         
     if ! paru -S --noconfirm $hyprland_pkg waybar-hyprland-git xdg-desktop-portal-hyprland dracula-icons-git $font_pkgs $theme_pkgs $app_pkgs; then
-        print_error "Failed to install additional packages."
+        print_error "${RED}Failed to install additional packages."
         exit 1
     fi
 
     # Start the bluetooth service
     echo -e "\n${YELLOW}Starting the Bluetooth service...${NC}"
     if ! sudo systemctl enable --now bluetooth.service; then
-        print_error "Failed to start the Bluetooth service."
+        print_error "${RED}Failed to start the Bluetooth service."
         exit 1
     fi
 
@@ -139,9 +139,6 @@ else
 fi
    
  # Clean out other portals
-read -n1 "Checking if any xdg-desktop-portal conflicts with xdg-desktop-portal-hyprland"
-sleep 2
-
 echo -e "\nChecking if any other xdg-desktop-portals exist..."
 
 # Check if packages are installed and uninstall if present
