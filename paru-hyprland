@@ -218,7 +218,7 @@ fi
 
 
 ### Install software for Asus ROG laptops ###
-read -n1 -rep "\n ${CAT} OPTIONAL - ONLY for ROG Laptops) Would you like to install Asus ROG software support? (y/n) \n" ROG
+read -n1 -rep "${CAT} OPTIONAL - ONLY for ROG Laptops) Would you like to install Asus ROG software support? (y/n)" ROG
 if [[ $ROG =~ ^[Yy]$ ]]; then
     printf "\nInstalling ASUS ROG packages...\n"
     paru -S --noconfirm asusctl 
@@ -229,7 +229,7 @@ if [[ $ROG =~ ^[Yy]$ ]]; then
     sudo systemctl daemon-reload && sudo systemctl enable --now supergfxd
     sleep 2
 else
-    printf "\nAsus ROG software support not installed. \n"
+    printf "\nAsus ROG software support not installed..\n"
 fi
 
 ### Disable wifi powersave mode ###
