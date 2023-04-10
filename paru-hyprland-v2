@@ -87,11 +87,6 @@ print_success() {
 }
 
 # Install necessary packages
-read -n1 "${YELLOW}Necessary packages will be installed.${NC}"
-echo
-
-sleep 2
-
 read -n1 -rep "${YELLOW}Would you like to install the packages? (y/n)${NC}" inst
 echo
 
