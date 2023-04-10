@@ -177,13 +177,13 @@ if pacman -Qs xdg-desktop-portal-lxqt > /dev/null ; then
     sudo pacman -R --noconfirm xdg-desktop-portal-lxqt
 fi
 
-print_success "\n All other XDG-DESKTOP-PORTAL Implementation Cleared"
+print_success " All other XDG-DESKTOP-PORTAL Implementation Cleared"
 
 
 ### Copy Config Files ###
 set -e # Exit immediately if a command exits with a non-zero status.
 
-read -n1 -rep "\n ${CAT} Would you like to copy config and wallpaper files? (y,n)" CFG
+read -n1 -rep "${CAT} Would you like to copy config and wallpaper files? (y,n)" CFG
 if [[ $CFG == "Y" || $CFG == "y" ]]; then
     printf "Copying config files...\n"
     mkdir -p ~/.config
@@ -217,7 +217,7 @@ fi
 
 
 ### Install software for Asus ROG laptops ###
-read -n1 -rep " ${CAT} (OPTIONAL - ONLY for ROG Laptops) Would you like to install Asus ROG software support? (y/n)\n" ROG
+read -n1 -rep " ${CAT} (OPTIONAL - ONLY for ROG Laptops) Would you like to install Asus ROG software support? (y/n)" ROG
 if [[ $ROG =~ ^[Yy]$ ]]; then
     printf " Installing ASUS ROG packages...\n"
     yay -S --noconfirm asusctl 
