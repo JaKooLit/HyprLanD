@@ -38,18 +38,22 @@
 # mousepad: simple text editor
 
 # Define color variables
-COK="\e[32m[OK]\e[0m"
-CWR="\e[33m[WARNING]\e[0m"
-CER="\e[31m[ERROR]\e[0m"
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+NC='\033[0m' # No Color
+
+# Set the script to exit on error
+set -e
 
 echo "Welcome to the Hyprland installer!"
 
 # Check if paru is installed
 ISPARU=/sbin/paru
 if [ -f "$ISPARU" ]; then
-    echo -e "$COK - paru was located, moving on."
+    echo -e "$GREEN - paru was located, moving on."
 else 
-    echo -e "$CWR - paru was NOT located"
+    echo -e "$YELLOW - paru was NOT located"
     read -n1 -rep $'[\e[1;33mACTION\e[0m] - Would you like to install paru (y,n) ' INSTPARU
     if [[ $INSTPARU == "Y" || $INSTPARU == "y" ]]; then
         git clone https://aur.archlinux.org/paru-bin.git
@@ -57,7 +61,7 @@ else
         makepkg -si --noconfirm 
         cd ..
     else
-        echo -e "$CER - Paru is required for this script, now exiting"
+        echo -e "$RED - Paru is required for this script, now exiting"
         exit
     fi
 fi
@@ -71,14 +75,6 @@ function check_command_status {
     fi
 }
 
-# Set the script to exit on error
-set -e
-
-# Define color variables
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[0;33m'
-NC='\033[0m' # No Color
 
 # Function to print error messages
 print_error() {
