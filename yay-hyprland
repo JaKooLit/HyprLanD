@@ -141,10 +141,10 @@ if [[ $inst =~ ^[Yy]$ ]]; then
     fi
 
     echo
-    print_success "\n All packages installed successfully."
+    print_success " All packages installed successfully."
 else
     echo
-    print_error "\n Packages not installed."
+    print_error " Packages not installed."
     sleep 2
 fi
    
