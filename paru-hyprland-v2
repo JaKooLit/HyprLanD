@@ -37,12 +37,13 @@
 # qt5ct: for visual settings for qt-apps
 # mousepad: simple text editor
 
+#!/bin/bash
+
 # Define color variables
 GREEN="$(tput setaf 2)[OK]$(tput sgr0)"
 RED="$(tput setaf 1)[ERROR]$(tput sgr0)"
 YELLOW="$(tput setaf 3)[WARNING]$(tput sgr0)"
 CAT="$(tput setaf 6)[NOTE]$(tput sgr0)"
-NC='\033[0m' # No Color
 
 # Set the script to exit on error
 set -e
@@ -87,11 +88,11 @@ print_success() {
 }
 
 # Install necessary packages
-read -n1 -rep "${CAT}Would you like to install the packages? (y/n)${NC}" inst
+read -n1 -rep "${CAT}Would you like to install the packages? (y/n)" inst
 echo
 
 if [[ $inst =~ ^[Yy]$ ]]; then
-    read -n1 -rep "${CAT}Would you like to install the Nvidia Hyprland? (y/n)${NC}" inst2
+    read -n1 -rep "${CAT}Would you like to install the Nvidia Hyprland? (y/n)" inst2
     echo
 
     if [[ $inst2 =~ ^[Yy]$ ]]; then
@@ -102,14 +103,14 @@ if [[ $inst =~ ^[Yy]$ ]]; then
         fi
     else
         # Install non-Nvidia Hyprland
-        echo -e "${YELLOW}No Nvidia-Hyprland will be installed.${NC}"
+        echo -e "${YELLOW}No Nvidia-Hyprland will be installed."
         if ! paru -S --noconfirm hyprland; then
             print_error "Failed to install non-Nvidia Hyprland."
             exit 1
         fi
     fi
 
-    echo -e "${YELLOW}Installing additional packages. Please wait...${NC}"
+    echo -e "${YELLOW}Installing additional packages. Please wait..."
     sleep 1
 
     # Install packages
@@ -124,7 +125,7 @@ if [[ $inst =~ ^[Yy]$ ]]; then
     fi
 
     # Start the bluetooth service
-    echo -e "\n${YELLOW}Starting the Bluetooth service...${NC}"
+    echo -e "\n${YELLOW}Starting the Bluetooth service..."
     if ! sudo systemctl enable --now bluetooth.service; then
         print_error "Failed to start the Bluetooth service."
         exit 1
