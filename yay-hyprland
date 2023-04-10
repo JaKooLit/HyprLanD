@@ -247,7 +247,7 @@ printf "\n${GREEN} Installation Completed.\n"
 printf "\n${YELLOW} You can start Hyprland by typing Hyprland (note the capital H!).\n"
 printf "\n${YELLOW} No Login Manager installed. You can start Hyprland by typing Hyprland (note the capital H!).\n"
 printf "\n${YELLOW} It is highly recommended to reboot your computer first.\n"
-read -n1 -rep "Would you like to start Hyprland now? (y,n)" HYP
+read -n1 -rep "\n${CAT} Would you like to start Hyprland now? (y,n)" HYP
 if [[ $HYP == "Y" || $HYP == "y" ]]; then
     if command -v Hyprland >/dev/null; then
         exec Hyprland
