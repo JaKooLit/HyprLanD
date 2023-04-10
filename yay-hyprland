@@ -150,7 +150,7 @@ else
 fi
    
  # Clean out other portals
-printf "\nChecking if any other xdg-desktop-portals exist..."
+printf "${YELLOW} Checking if any other xdg-desktop-portals exist...\n"
 
 # Check if packages are installed and uninstall if present
 if pacman -Qs xdg-desktop-portal-gnome > /dev/null ; then
@@ -178,7 +178,7 @@ if pacman -Qs xdg-desktop-portal-lxqt > /dev/null ; then
     sudo pacman -R --noconfirm xdg-desktop-portal-lxqt
 fi
 
-print_success "$GREEN All other XDG-DESKTOP-PORTAL Implementation Cleared "
+print_success "All other XDG-DESKTOP-PORTAL Implementation Cleared \n"
 
 
 ### Copy Config Files ###
