@@ -88,11 +88,11 @@ print_success() {
 }
 
 # Install necessary packages
-read -n1 -rep "${CAT}Would you like to install the packages? (y/n)${NC}" inst
+read -n1 -rep "${CAT}Would you like to install the packages? (y/n)" inst
 echo
 
 if [[ $inst =~ ^[Yy]$ ]]; then
-    read -n1 -rep "${CAT}Would you like to install the Nvidia Hyprland? (y/n)${NC}" inst2
+    read -n1 -rep "${CAT}Would you like to install the Nvidia Hyprland? (y/n)" inst2
     echo
 
     if [[ $inst2 =~ ^[Yy]$ ]]; then
