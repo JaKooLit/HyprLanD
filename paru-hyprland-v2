@@ -98,7 +98,7 @@ if [[ $inst =~ ^[Yy]$ ]]; then
     if [[ $inst2 =~ ^[Yy]$ ]]; then
         # Install Nvidia Hyprland
         if ! paru -S --noconfirm hyprland-nvidia-git; then
-            print_error "Failed to install Nvidia Hyprland - remove any conflicting package"
+            print_error "Failed to install Nvidia Hyprland - pls remove any conflicting package"
             exit 1
         fi
     else
