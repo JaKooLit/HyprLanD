@@ -105,7 +105,7 @@ if [[ $inst =~ ^[Yy]$ ]]; then
         # Install non-Nvidia Hyprland
         echo -e "${YELLOW} None Nvidia-Hyprland will be installed."
         if ! paru -S --noconfirm hyprland; then
-            print_error "Failed to install non-Nvidia Hyprland."
+            print_error "Failed to install Hyprland."
             exit 1
         fi
     fi
@@ -132,10 +132,10 @@ if [[ $inst =~ ^[Yy]$ ]]; then
     fi
 
     echo
-    print_success "All packages installed successfully."
+    print_success " All packages installed successfully."
 else
     echo
-    print_error "Packages not installed."
+    print_error " Packages not installed."
     sleep 2
 fi
    
@@ -168,7 +168,7 @@ if pacman -Qs xdg-desktop-portal-lxqt > /dev/null ; then
     sudo pacman -R --noconfirm xdg-desktop-portal-lxqt
 fi
 
-print_success "All none xdg-desktop-portal-hyprland present"
+print_success " All other XDG-DESKTOP-PORTAL Implementation Cleared"
 
 
 ### Copy Config Files ###
