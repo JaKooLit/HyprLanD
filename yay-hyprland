@@ -58,7 +58,7 @@ sleep 3
 
 printf "\n
 $YELLOW  Some commands requires you to enter your password inorder to execute
-If you are worried about entering your password, you can cancel the script now with CTRL Q or CTRL C and review contents of this script."
+If you are worried about entering your password, you can cancel the script now with CTRL Q or CTRL C and review contents of this script. \n"
 
 sleep 3
 # Check if yay is installed
