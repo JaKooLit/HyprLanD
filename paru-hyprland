@@ -46,7 +46,7 @@ CAT="$(tput setaf 6)[ACTION]$(tput sgr0)"
 # Set the script to exit on error
 set -e
 
-printf "$(tput setaf 2) Welcome to the Arch Linux paru Hyprland installer!\n $(tput sgr0)"
+printf "$(tput setaf 2) Welcome to the Arch Linux PARU Hyprland installer!\n $(tput sgr0)"
 
 sleep 3
 
