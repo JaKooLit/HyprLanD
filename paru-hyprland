@@ -50,7 +50,8 @@ printf "$(tput setaf 2) Welcome to the Arch Linux PARU Hyprland installer!\n $(t
 
 sleep 3
 
-printf "$YELLOW PLEASE BACKUP YOUR FILES BEFORE PROCEEDING!
+printf "\n 
+$YELLOW PLEASE BACKUP YOUR FILES BEFORE PROCEEDING!
 This script will overwrite some of your configs and files!
 \n"
 
@@ -58,9 +59,7 @@ sleep 3
 
 printf "\n
 $YELLOW  Some commands requires you to enter your password inorder to execute
-If you are worried about entering your password, you can cancel the script now with CTRL Q or CTRL C and review contents of this script."
-
-sleep 3
+If you are worried about entering your password, you can cancel the script now with CTRL Q or CTRL C and review contents of this script.\n"
 
 # Check if paru is installed
 ISPARU=/sbin/paru
