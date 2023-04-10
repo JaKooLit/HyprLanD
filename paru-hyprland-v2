@@ -38,23 +38,23 @@
 # mousepad: simple text editor
 
 # Define color variables
-GREEN="[\e[1;32mOK\e[0m]"
-RED="[\e[1;31mERROR\e[0m]"
-YELLOW="[\e[1;33mWARNING\e[0m]"
-CAT="[\e[1;36mNOTE\e[0m]"
+GREEN="$(tput setaf 2)[OK]$(tput sgr0)"
+RED="$(tput setaf 1)[ERROR]$(tput sgr0)"
+YELLOW="$(tput setaf 3)[WARNING]$(tput sgr0)"
+CAT="$(tput setaf 6)[NOTE]$(tput sgr0)"
 NC='\033[0m' # No Color
 
 # Set the script to exit on error
 set -e
 
-echo "Welcome to the Hyprland installer!"
+printf "Welcome to the Hyprland installer!\n"
 
 # Check if paru is installed
 ISPARU=/sbin/paru
 if [ -f "$ISPARU" ]; then
-    echo -e "$GREEN - paru was located, moving on."
+    printf "%s - paru was located, moving on.\n" "$GREEN"
 else 
-    echo -e "$YELLOW - paru was NOT located"
+    printf "%s - paru was NOT located\n" "$YELLOW"
     read -n1 -rep "${CAT}Would you like to install paru (y,n)" INSTPARU
     if [[ $INSTPARU == "Y" || $INSTPARU == "y" ]]; then
         git clone https://aur.archlinux.org/paru-bin.git
@@ -62,7 +62,7 @@ else
         makepkg -si --noconfirm 
         cd ..
     else
-        echo -e "$RED - Paru is required for this script, now exiting"
+        printf "%s - Paru is required for this script, now exiting\n" "$RED"
         exit
     fi
 fi
@@ -71,28 +71,27 @@ fi
 # Function to check if a command executed successfully
 function check_command_status {
     if [ $? -ne 0 ]; then
-        echo -e "\nError executing command: $1"
+        printf "\nError executing command: %s\n" "$1"
         exit 1
     fi
 }
 
-
 # Function to print error messages
 print_error() {
-    echo -e "${RED}Error: $1${NC}" >&2
+    printf "%sError: %s%s\n" "$RED" "$1" "$NC" >&2
 }
 
 # Function to print success messages
 print_success() {
-    echo -e "${GREEN}$1${NC}"
+    printf "%s%s%s\n" "$GREEN" "$1" "$NC"
 }
 
 # Install necessary packages
-read -n1 -rep "${CAT}Would you like to install the packages? (y/n)" inst
+read -n1 -rep "${CAT}Would you like to install the packages? (y/n)${NC}" inst
 echo
 
 if [[ $inst =~ ^[Yy]$ ]]; then
-    read -n1 -rep "${CAT}Would you like to install the Nvidia Hyprland? (y/n)" inst2
+    read -n1 -rep "${CAT}Would you like to install the Nvidia Hyprland? (y/n)${NC}" inst2
     echo
 
     if [[ $inst2 =~ ^[Yy]$ ]]; then
