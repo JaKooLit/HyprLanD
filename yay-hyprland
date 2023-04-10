@@ -114,7 +114,7 @@ if [[ $inst =~ ^[Yy]$ ]]; then
         # Install non-Nvidia Hyprland
         printf "${YELLOW} None Nvidia-Hyprland will be installed."
         if ! yay -S --noconfirm hyprland; then
-            print_error "Failed to install Hyprland."
+            print_error " Failed to install Hyprland."
             exit 1
         fi
     fi
@@ -129,14 +129,14 @@ if [[ $inst =~ ^[Yy]$ ]]; then
 
         
     if ! yay -S --noconfirm $hyprland_pkg waybar-hyprland-git xdg-desktop-portal-hyprland dracula-icons-git $font_pkgs $theme_pkgs $app_pkgs; then
-        print_error "Failed to install additional packages."
+        print_error " Failed to install additional packages."
         exit 1
     fi
 
     # Start the bluetooth service
     printf "\n${YELLOW} Starting the Bluetooth service..."
     if ! sudo systemctl enable --now bluetooth.service; then
-        print_error "Failed to start the Bluetooth service."
+        print_error " Failed to start the Bluetooth service."
         exit 1
     fi
 
@@ -249,7 +249,7 @@ printf "\n${GREEN} Installation Completed.\n"
 printf "\n${YELLOW} You can start Hyprland by typing Hyprland (note the capital H!).\n"
 printf "\n${YELLOW} No Login Manager installed. You can start Hyprland by typing Hyprland (note the capital H!).\n"
 printf "\n${YELLOW} It is highly recommended to reboot your computer first.\n"
-read -n1 -rep "\n${CAT} Would you like to start Hyprland now? (y,n)" HYP
+read -n1 -rep "${CAT} Would you like to start Hyprland now? (y,n)" HYP
 if [[ $HYP == "Y" || $HYP == "y" ]]; then
     if command -v Hyprland >/dev/null; then
         exec Hyprland
