@@ -50,8 +50,7 @@ printf "$(tput setaf 2) Welcome to the Arch Linux YAY Hyprland installer!\n $(tp
 
 sleep 3
 
-printf "\n 
-$YELLOW PLEASE BACKUP YOUR FILES BEFORE PROCEEDING!
+printf "$YELLOW PLEASE BACKUP YOUR FILES BEFORE PROCEEDING!
 This script will overwrite some of your configs and files!
 \n"
 
@@ -59,7 +58,7 @@ sleep 3
 
 printf "\n
 $YELLOW  Some commands requires you to enter your password inorder to execute
-If you are worried about entering your password, you can cancel the script now with CTRL Q or CTRL C and review contents of this script.\n"
+If you are worried about entering your password, you can cancel the script now with CTRL Q or CTRL C and review contents of this script."
 
 sleep 3
 # Check if yay is installed
@@ -179,7 +178,7 @@ if pacman -Qs xdg-desktop-portal-lxqt > /dev/null ; then
     sudo pacman -R --noconfirm xdg-desktop-portal-lxqt
 fi
 
-print_success " All other XDG-DESKTOP-PORTAL Implementation Cleared"
+print_success "\n $GREEN All other XDG-DESKTOP-PORTAL Implementation Cleared \n"
 
 
 ### Copy Config Files ###
@@ -219,7 +218,7 @@ fi
 
 
 ### Install software for Asus ROG laptops ###
-read -n1 -rep "${CAT} OPTIONAL - ONLY for ROG Laptops) Would you like to install Asus ROG software support? (y/n)" ROG
+read -n1 -rep "\n ${CAT} OPTIONAL - ONLY for ROG Laptops) Would you like to install Asus ROG software support? (y/n) \n" ROG
 if [[ $ROG =~ ^[Yy]$ ]]; then
     echo -e "\nInstalling ASUS ROG packages...\n"
     yay -S --noconfirm asusctl 
@@ -230,7 +229,7 @@ if [[ $ROG =~ ^[Yy]$ ]]; then
     sudo systemctl daemon-reload && sudo systemctl enable --now supergfxd
     sleep 2
 else
-    echo -e "\nAsus ROG software support not installed."
+    echo -e "\nAsus ROG software support not installed. \n"
 fi
 
 ### Disable wifi powersave mode ###
@@ -245,8 +244,8 @@ if [[ $WIFI == "Y" || $WIFI == "y" ]]; then
     sleep 3
 fi
 ### Script is done ###
-echo -e "Installation Completed.\n"
-echo -e "You can start Hyprland by typing Hyprland (note the capital H!).\n"
+echo -e "\n ${GREEN} Installation Completed.\n"
+echo -e "${YELLOW} You can start Hyprland by typing Hyprland (note the capital H!).\n"
 echo -e "${YELLOW} No Login Manager installed. You can start Hyprland by typing Hyprland (note the capital H!).\n"
 echo -e "${YELLOW} It is highly recommended to reboot your computer first.\n"
 read -n1 -rep "Would you like to start Hyprland now? (y,n)" HYP
