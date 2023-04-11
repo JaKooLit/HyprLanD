@@ -125,7 +125,7 @@ if [[ $inst =~ ^[Yy]$ ]]; then
     # Install packages
     font_pkgs="otf-font-awesome ttf-jetbrains-mono-nerd otf-font-awesome-4 ttf-fantasque-sans-mono"
     theme_pkgs="dracula-gtk-theme bibata-cursor-theme-bin"
-    app_pkgs="foot swaybg swaylock-effects wofi wlogout mako thunar btop gvfs thunar-volman tumbler ffmpegthumbs qt5ct wl-clipboard polkit-gnome python-requests grim slurp pamixer brightnessctl viewnior pavucontrol mpv network-manager-applet mousepad mpv bluez bluez-utils blueman nwg-look-bin"
+    app_pkgs="foot swaybg swaylock-effects wofi wlogout mako thunar btop jq gvfs thunar-volman tumbler ffmpegthumbs qt5ct wl-clipboard polkit-gnome python-requests grim slurp pamixer brightnessctl viewnior pavucontrol mpv network-manager-applet mousepad mpv bluez bluez-utils blueman nwg-look-bin"
 
         
     if ! paru -S --noconfirm $hyprland_pkg waybar-hyprland-git xdg-desktop-portal-hyprland dracula-icons-git $font_pkgs $theme_pkgs $app_pkgs; then
