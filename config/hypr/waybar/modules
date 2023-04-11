@@ -60,7 +60,7 @@
    "format-alt-click": "click-right",
    "interval": 3600,
    "return-type": "json",
-   "exec": "~/.config/hypr/waybar/scripts/weather.sh",
+   "exec": "~/.config/hypr/scripts/weather.sh",
    "exec-if": "ping wttr.in -c1"
 },
   "wlr/workspaces": {
