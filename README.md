@@ -14,7 +14,6 @@ https://user-images.githubusercontent.com/85185940/227948968-03e5097d-9850-437f-
 
 - Main Component:[`Hyprland`](https://github.com/hyprwm/Hyprland)
 - Terminal: [`Foot`](https://github.com/r-c-f/foot)
-- Shell: [`Zshell`](https://www.zsh.org/)
 - Status bar: [`Waybar`](https://github.com/Alexays/Waybar)
 - Menu : [`Wofi`](https://hg.sr.ht/~scoopta/wofi)
 - FIle Manager: [`Thunar`](https://docs.xfce.org/xfce/thunar/start)
