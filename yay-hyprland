@@ -186,8 +186,6 @@ set -e # Exit immediately if a command exits with a non-zero status.
 read -n1 -rep "${CAT} Would you like to copy config and wallpaper files? (y,n)" CFG
 if [[ $CFG == "Y" || $CFG == "y" ]]; then
     printf "Copying config files...\n"
-else
-   print_error " No Config files and wallpaper files copied"
     mkdir -p ~/.config
     cp -r config/hypr ~/.config/ || { echo "Error: Failed to copy hypr config files."; exit 1; }
     cp -r config/foot ~/.config/ || { echo "Error: Failed to copy foot config files."; exit 1; }
@@ -215,6 +213,8 @@ else
     chmod +x ~/.config/hypr/scripts/volume
     chmod +x ~/.config/hypr/scripts/weather.sh
     chmod +x ~/.config/hypr/scripts/wofi-beats
+else
+   print_error " No Config files and wallpaper files copied"
 fi
 
 
