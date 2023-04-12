@@ -76,7 +76,8 @@ else
         printf "%s - yay is required for this script, now exiting\n" "$RED"
         exit
     fi
-#updating system before proceeding
+# update system before proceed
+    printf "${YELLOW} System Update to avoid issue\n" "GREEN"
     yay -Syu --noconfirm
 fi
 
