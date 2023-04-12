@@ -76,6 +76,8 @@ else
         printf "%s - yay is required for this script, now exiting\n" "$RED"
         exit
     fi
+#updating system before proceeding
+    yay -Syu --noconfirm
 fi
 
 # Prompt user to install packages
