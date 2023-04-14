@@ -77,7 +77,7 @@ d.) Installation of Asus-ROG-utilities are entirely optional. This is only for A
 
 
 ## ✨ Manual Installation and Notes: 
-# you can copy, create, change, however, would appreciate to submit like a pull request or issues if you have a better solution / changes so we will all improve :)
+#### you can copy, create, change, however, would appreciate to submit like a pull request or issues if you have a better solution / changes so we will all improve :)
 
 These configs are used in my Laptop and Desktop. 
 Please note, Only provided are configs. Any Hyprland-related issues to be reported on Hyprland Github
