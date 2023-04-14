@@ -77,7 +77,7 @@ d.) Installation of Asus-ROG-utilities are entirely optional. This is only for A
 
 
 ## ✨ Manual Installation and Notes: 
-### you can copy, create, change, however, would appreciate if you have have a better solution / changes so we will all improve :)
+# you can copy, create, change, however, would appreciate to submit like a pull request or issues if you have a better solution / changes so we will all improve :)
 
 These configs are used in my Laptop and Desktop. 
 Please note, Only provided are configs. Any Hyprland-related issues to be reported on Hyprland Github
@@ -109,5 +109,5 @@ Gentoo Specific
 2. Waybar - from Gentoo repo's waybar, I experienced unclickable workspaces. I have installed from useless-overlay. Click [`here`](https://github.com/JaKooLit/Ja_HyprLanD-dots/blob/main/misc/Gentoo-Waybar) for guidance
 3. For screen sharing, I use xdg-desktop-portal-wlr which seems to work. If you are having issues, install xdg-desktop-portal-hyprland
 4. if you use openrc, ensure to launch hyprland with dbus-run-session Hyprland. Omitting the dbus-run-session may cause [`runtime errors`](https://wiki.gentoo.org/wiki/Sway#Failed_to_connect_to_user_bus)
-5. `fonts` you need fontawesome and nerd-fonts use (3270 + symbols) (available in overlay) to display some icons in waybar
+5. `fonts` you need fontawesome and nerd-fonts (X jetbrainsmono symbolsmono) (available in overlay) to display some icons in waybar
 
