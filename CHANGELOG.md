@@ -1,3 +1,6 @@
+# 15 April 2023
+- commented blurls = waybar on hyprland.conf to have a full transparent waybar
+
 # 14 April 2023
 - updated Readme Arch Linux installation notes
 
