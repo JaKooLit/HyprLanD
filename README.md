@@ -1,14 +1,10 @@
-
 https://user-images.githubusercontent.com/85185940/227948968-03e5097d-9850-437f-8109-8d376bf81e9f.mp4
-
 
 <br>
 <h3 align = "center"> Arch / Gentoo Hyprland Dotfiles</h3>
 <br>
 
 <img src="https://github.com/JaKooLit/Ja_HyprLanD-dots/blob/main/preview/Arch.png" alt="">
-
-<img src="https://github.com/JaKooLit/Ja_HyprLanD-dots/blob/main/preview/Gentoo.png" alt="">
 
 ## Components:
 
@@ -74,7 +70,8 @@ c.) If you want to add or edit packages, edit yay-hyprland or paru-hyprland scri
 
 d.) Installation of Asus-ROG-utilities are entirely optional. This is only for Asus Laptop. if you select no, will skip the step.
 
-
+## ✨ NVIDIA-Hyprland notes:
+- kindly note, on configs I added all the nvidia variables from Hyprland wiki [`Link`](https://wiki.hyprland.org/Nvidia/) but by default they are not enabled. I've had issues like OBS not recording, or intermittent crashing etc, on my laptop. Check the ~/.config/hypr/configs/exec.conf and uncomment one by one to try. You can read through Hyprland-Wiki for some guidance.
 
 ## ✨ Manual Installation and Notes: 
 #### you can copy, create, change, however, would appreciate to submit like a pull request or issues if you have a better solution / changes so we will all improve :)
