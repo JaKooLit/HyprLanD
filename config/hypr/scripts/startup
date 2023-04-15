@@ -10,7 +10,7 @@ for _prs in "${_ps[@]}"; do
 	fi
 done
 
-# Apply themes
+# Apply themes This can be use instead of nwg-look app
 #${SCRIPTSDIR}/gtkthemes &
 
 # Lauch notification daemon (mako)
