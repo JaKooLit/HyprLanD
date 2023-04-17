@@ -1,3 +1,6 @@
+# 17 April 203
+- updated installer script to replace waybar-hyprland-git with waybar-hyprland. Git version conflicts with cava
+
 # 15 April 2023
 - commented blurls = waybar on hyprland.conf to have a full transparent waybar
 
