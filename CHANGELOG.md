@@ -1,4 +1,8 @@
-# 17 April 203
+# 19 April 2023
+- paru and yay hyprland scripts updated to install waybar-hyprland only and not the git packages. 
+- And also, Dracula icons and themes including Bibata Cursor themes are now optional!
+
+# 17 April 2023
 - updated installer script to replace waybar-hyprland-git with waybar-hyprland. Git version conflicts with cava
 
 # 15 April 2023
