@@ -45,7 +45,7 @@ CAT="$(tput setaf 6)[ACTION]$(tput sgr0)"
 # Set the script to exit on error
 set -e
 
-printf "$(tput setaf 2) Welcome to the Arch Linux YAY Hyprland installer!\n $(tput sgr0)"
+printf "$(tput setaf 2) Welcome to the Arch Linux PARU Hyprland installer!\n $(tput sgr0)"
 
 sleep 3
 
@@ -59,26 +59,26 @@ $YELLOW  Some commands requires you to enter your password inorder to execute
 If you are worried about entering your password, you can cancel the script now with CTRL Q or CTRL C and review contents of this script. \n"
 
 sleep 2
-# Check if yay is installed
-ISyay=/sbin/yay
+# Check if paru is installed
+ISparu=/sbin/paru
 
-if [ -f "$ISyay" ]; then
-    printf "\n%s - yay was located, moving on.\n" "$GREEN"
+if [ -f "$ISparu" ]; then
+    printf "\n%s - paru was located, moving on.\n" "$GREEN"
 else 
-    printf "\n%s - yay was NOT located\n" "$YELLOW"
-    read -n1 -rep "${CAT} Would you like to install yay (y,n)" INSTALL-yay
-    if [[ $INSTALL-yay =~ ^[Yy]$ ]]; then
-        git clone https://aur.archlinux.org/yay-bin.git
-        cd yay-bin
+    printf "\n%s - paru was NOT located\n" "$YELLOW"
+    read -n1 -rep "${CAT} Would you like to install paru (y,n)" INSTALL-paru
+    if [[ $INSTALL-paru =~ ^[Yy]$ ]]; then
+        git clone https://aur.archlinux.org/paru-bin.git
+        cd paru-bin
         makepkg -si --noconfirm 
         cd ..
     else
-        printf "%s - yay is required for this script, now exiting\n" "$RED"
+        printf "%s - paru is required for this script, now exiting\n" "$RED"
         exit
     fi
 # update system before proceed
     printf "${YELLOW} System Update to avoid issue\n" "GREEN"
-    yay -Syu --noconfirm
+    paru -Syu --noconfirm
 fi
 
 # Prompt user to install packages
@@ -114,14 +114,14 @@ if [[ $inst =~ ^[Yy]$ ]]; then
 
     if [[ $inst2 =~ ^[Yy]$ ]]; then
         # Install Nvidia Hyprland
-        if ! yay -S --noconfirm hyprland-nvidia-git; then
+        if ! paru -S --noconfirm hyprland-nvidia-git; then
             print_error "Failed to install Nvidia Hyprland - pls remove any conflicting package"
             exit 1
         fi
     else
         # Install non-Nvidia Hyprland
         printf "${YELLOW} None Nvidia-Hyprland will be installed.\n"
-        if ! yay -S --noconfirm hyprland; then
+        if ! paru -S --noconfirm hyprland; then
             print_error " Failed to install Hyprland."
             exit 1
         fi
@@ -137,7 +137,7 @@ if [[ $inst =~ ^[Yy]$ ]]; then
    app_pkgs2="python-requests  pamixer brightnessctl viewnior pavucontrol playerctl mpv network-manager-applet cava"
 
        
-    if ! yay -S --noconfirm $hypr_pkgs $font_pkgs $app_pkgs $app_pkgs2; then
+    if ! paru -S --noconfirm $hypr_pkgs $font_pkgs $app_pkgs $app_pkgs2; then
         print_error " Failed to install additional packages.\n"
         exit 1
     fi
@@ -156,7 +156,7 @@ read -n1 -rep "${CAT} OPTIONAL - Would you like to install Dracula Icons and The
 
     if [[ $inst3 =~ ^[Yy]$ ]]; then
 	theme_pkgs="dracula-gtk-theme dracula-icons-git bibata-cursor-theme-bin"
-        if ! yay -S --noconfirm $theme_pkgs; then
+        if ! paru -S --noconfirm $theme_pkgs; then
             print_error "Failed to install additional themes"
             exit 1
         fi
@@ -242,7 +242,7 @@ read -n1 -rep "${CAT} OPTIONAL - Would you like to install Bluetooth packages? (
 if [[ $BLUETOOTH =~ ^[Yy]$ ]]; then
     printf " Installing Bluetooth Packages...\n"
  blue_pkgs="bluez bluez-utils blueman"
-    if ! yay -S --noconfirm $blue_pkgs; then
+    if ! paru -S --noconfirm $blue_pkgs; then
        	print_error "Failed to install ROG packages"    
     printf " Activating Bluetooth Services...\n"
     sudo systemctl enable --now bluetooth.service
@@ -257,7 +257,7 @@ read -n1 -rep "${CAT} (OPTIONAL - ONLY for ROG Laptops) Would you like to instal
 if [[ $ROG =~ ^[Yy]$ ]]; then
     printf " Installing ASUS ROG packages...\n"
  ROG_pkgs="asusctl supergfxctl rog-control-center"
-    if ! yay -S --noconfirm $ROG_pkgs; then
+    if ! paru -S --noconfirm $ROG_pkgs; then
        	print_error "Failed to install ROG packages"    
     printf " Activating ROG services...\n"
     sudo systemctl daemon-reload && sudo systemctl enable --now supergfxd
