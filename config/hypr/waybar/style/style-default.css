@@ -85,7 +85,7 @@ window#waybar.hidden {
   color: #e5e5e5;
   /* color: #bf616a; */
   border-radius: 20px;
-  background-color: rgba(50, 50, 50, 0.5);
+  background-color: rgba(50, 50, 50, 0.1);
 }
 
 #workspaces {
