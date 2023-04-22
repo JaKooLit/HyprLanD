@@ -1,3 +1,6 @@
+# 22 April 2023
+- Clean up configs, settings and folders
+- 
 # 21 April 2023
 - Scripts updated to make as bluetooth packages optional
 
