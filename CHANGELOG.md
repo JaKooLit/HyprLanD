@@ -1,6 +1,7 @@
 # 22 April 2023
 - Clean up configs, settings and folders
-- 
+- updated Thunar and XFCE4 folders
+
 # 21 April 2023
 - Scripts updated to make as bluetooth packages optional
 
