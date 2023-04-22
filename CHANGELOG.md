@@ -2,6 +2,7 @@
 - Clean up configs, settings and folders
 - updated Thunar and XFCE4 folders
 - updated brightness script
+- updated scripts to make thunar as optional
 
 # 21 April 2023
 - Scripts updated to make as bluetooth packages optional
