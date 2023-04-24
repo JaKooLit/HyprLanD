@@ -1,3 +1,6 @@
+# 25 April 2023
+- Edited Mako notifications. Sound enabled by default and moved to top-center location
+
 # 22 April 2023
 - Clean up configs, settings and folders
 - updated Thunar and XFCE4 folders
