@@ -1,3 +1,6 @@
+# 01 May 2023
+- Updated wallpapers for upcoming wallpaper utility video
+
 # 30 April 2023
 - updated readme for Gentoo
 - added blueman-manager in windows rules to launch in float mode
