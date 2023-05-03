@@ -109,7 +109,7 @@ if [[ $inst =~ ^[Nn]$ ]]; then
         fi
 
 if [[ $inst =~ ^[Yy]$ ]]; then
-    read -n1 -rep "${CAT} Would you like to install the Nvidia Hyprland? (y/n)" inst2
+    read -n1 -rep "${CAT} Would you like to install the Nvidia Hyprland? (NOTE) This will only install hyprland-nvidia. Nvidia drivers wont be installed! (y/n)" inst2
     echo
 
     if [[ $inst2 =~ ^[Yy]$ ]]; then
@@ -232,8 +232,10 @@ if [[ $CFG =~ ^[Yy]$ ]]; then
     # Set some files as executable 
     chmod +x ~/.config/hypr/scripts/airplane-mode.sh
     chmod +x ~/.config/hypr/scripts/brightness
+    chmod +x ~/.config/hypr/scripts/brightness-kbd
     chmod +x ~/.config/hypr/scripts/changeLayout
     chmod +x ~/.config/hypr/scripts/changeWallpaper
+    chmod +x ~/.config/hypr/scripts/changeWallpaper2
     chmod +x ~/.config/hypr/scripts/fullmenu
     chmod +x ~/.config/hypr/scripts/glassmorphismToggle
     chmod +x ~/.config/hypr/scripts/lockscreen
@@ -246,6 +248,8 @@ if [[ $CFG =~ ^[Yy]$ ]]; then
     chmod +x ~/.config/hypr/scripts/switch-lid.sh
     chmod +x ~/.config/hypr/scripts/touchpad.sh
     chmod +x ~/.config/hypr/scripts/volume
+    chmod +x ~/.config/hypr/scripts/wallpaper-switcher
+    chmod +x ~/.config/hypr/scripts/waybar-style-change
     chmod +x ~/.config/hypr/scripts/weather.sh
     chmod +x ~/.config/hypr/scripts/wofi-beats
 else
