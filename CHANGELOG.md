@@ -1,3 +1,7 @@
+# 03 May 2023
+- Scripts, keybinds updated for swww utility (see https://youtu.be/6ZGzOjMJBe4 )
+
+
 # 01 May 2023
 - Updated wallpapers for upcoming wallpaper utility video
 
