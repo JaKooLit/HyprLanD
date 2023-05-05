@@ -4,6 +4,7 @@
 CONFIG="$HOME/.config/hypr/wofi/config"
 STYLE="$HOME/.config/hypr/wofi/style.css"
 COLORS="$HOME/.config/hypr/wofi/colors"
+iDIR="$HOME/.config/hypr/mako/icons"
 
 ## Wofi Command
 wofi_command="wofi --show dmenu \
@@ -15,7 +16,7 @@ wofi_command="wofi --show dmenu \
 
 
 notification(){
-  notify-send "Now Playing: Online Music"
+  notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$iDIR/music.png" "Now Playing: Online Music" 
 }
 
 menu(){
@@ -26,7 +27,7 @@ printf "4. Top Music 2023\n"
 printf "5. Youtube Global Top 100\n"
 printf "6. SmoothChill\n"
 printf "7. Relaxing Music\n"
-printf "8. K-Drama-OST\n"
+printf "8. Youtube Remix\n"
 printf "9. K-Drama-OST2"
 }
 main() {
@@ -69,7 +70,7 @@ case $choice in
 ;;
 8)
   notification ;
-  mpv --shuffle  --vid=no "https://youtube.com/playlist?list=PLDtGd5Fw5_Gia0YBU7m0EOfqjNDBztHmo"
+  mpv --shuffle  --vid=no "https://youtube.com/playlist?list=PLeqTkIUlrZXlSNn3tcXAa-zbo95j0iN-0"
   return
   ;;
 9)
@@ -80,4 +81,4 @@ case $choice in
 esac
 }
 
-pkill -f http && notify-send "Online Music stopped" || main
+pkill -f http && notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$iDIR/music.png" "Online Music stopped" || main
